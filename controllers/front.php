@@ -19,6 +19,7 @@ class Front extends Controller {
 			$author = $this->cleanInput( $_POST['author'] );
 			$title  = $this->cleanInput( $_POST['title'] );
 			$quote 	= $this->cleanInput( $_POST['quote'] );
+			$quote = $this->checkStringLength( $quote );
 
 			$data = array(
 				'author' 	=> $author,
@@ -38,6 +39,11 @@ class Front extends Controller {
 
 	public function getQuotes() {
 		return $data = $this->model->getQuotes();
+	}
+
+	private function checkStringLength( $string ) {
+		$length = strlen( $string );
+		return $string = ( $length >= 42 ) ? mb_strimwidth($string, 0, 42, '...') : $string;
 	}
 
 }
