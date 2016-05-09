@@ -40,11 +40,4 @@ class Front extends Controller {
 		return $data = $this->model->getQuotes();
 	}
 
-	private function cleanInput( $input ) {
-		$input = strip_tags( $input );
-		$input = htmlentities( $input );
-
-		return $input;
-	}
-
 }

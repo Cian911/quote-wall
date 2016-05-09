@@ -17,4 +17,11 @@ class Controller {
 			$this->model = new $modelName();
 		} 
 	}
+
+	protected function cleanInput( $input ) {
+		$input = strip_tags( $input );
+		$input = htmlentities( $input );
+
+		return $input;
+	}
 }
