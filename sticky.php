@@ -1,3 +1,8 @@
+<?php  
+
+require('core/init.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,15 +87,17 @@
           <h4 class="modal-title" id="myModalLabel">Add your Quuote to {Month}'s Quote Wall</h4>
         </div>
         <div class="modal-body">
-          <form role="form" action="#" method="post">
+          <form role="form" action="core/api/request_handler.php?action=add" method="post">
             <div class="form-group">
-              <textarea id="input-quote" class="form-control" rows="5"></textarea>
+              <textarea id="input-quote" class="form-control modal-form-control" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Add Quote</button>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add Quote</button>
         </div>
       </div>
     </div>
