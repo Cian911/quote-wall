@@ -5,17 +5,17 @@
   <div class="toolbar-right"></div>
 </div>
 <div class="month">
-  <h2>May</h2>
+  <h2><?php echo date('F Y'); ?></h2>
 </div>
 <ul class="quote-container">
-<?php foreach( $data as $quote ) { ?>
+  <?php foreach( $data as $quote ) { ?>
   <li>
     <a href="#">
       <h2><?php echo $quote['quote_title']; ?></h2>
       <p><?php echo $quote['text']; ?></p>
     </a>
   </li>
-<?php } ?>
+  <?php } ?>
 </ul>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

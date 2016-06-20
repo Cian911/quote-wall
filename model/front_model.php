@@ -7,7 +7,7 @@ class FrontModel extends Model {
   }
 
   public function getQuotes() {
-    $sql = "SELECT * FROM quotes";
+    $sql = "SELECT * FROM `quotes` ORDER BY `date` DESC";
     $query = $this->db->prepare( $sql );
     $result = $query->execute();
 
