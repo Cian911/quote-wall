@@ -30,7 +30,7 @@ class Front extends Controller {
 			$result = $this->model->addQuote( $data );
 
 			if ( $result ) {
-				header('Location: /quote_wall/');
+				header('Location: /');
 			} else {
 				return $error = "Something went wrong adding your quote";
 			}
